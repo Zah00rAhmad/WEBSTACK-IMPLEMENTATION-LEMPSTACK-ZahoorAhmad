@@ -159,6 +159,53 @@ sudo rm /var/www/projectLEMP/info.php
 ![29](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/3f45bed2-8228-46fc-a322-3e436f047875)
 
 
+## Step 6 — Retrieving data from MySQL database with PHP
+
+1. First, connect to the MySQL console using the root account:
+   sudo mysql -u root -p
+2. To create a new database, run the following command from your MySQL console:
+   mysql> CREATE DATABASE steghub_DB;
+
+![30](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/813604f3-5d53-4335-a6ee-c0f26111b4b4)
+
+3. The following command creates a new user named example_user, using mysql_native_password as default authentication method. We’re defining this user’s password as password, but you should replace this value with a secure password of your own choosing.
+
+   create user 'Zahoor'@'%' IDENTIFIED WITH mysql_native_password BY 'L@h00r@1';
+   GRANT ALL ON STEG_HUB.* TO 'Zahoor'@'%';
+   
+   ![32](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/9be9f961-edd9-4bcb-902f-ff56b6692815)
+
+4. You can test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
+   mysql -u Zahoor -p
+
+5. Confirm that you have access to the example_database database:
+
+![33](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/2b0453a3-f6af-4208-abdf-c67f939cb50d)
+
+6. We’ll create a test table named todo_list. From the MySQL console, run the following statement:
+
+CREATE TABLE STEG_HUB.todo_list (
+item_id INT AUTO_INCREMENT,
+content VARCHAR(255),
+PRIMARY KEY(item_id)
+);
+
+![34](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/96b349a9-714a-4742-8949-ca2d47f85d9d)
+
+7. Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different values:
+8. To confirm that the data was successfully saved to your table, run:
+   SELECT * FROM STEG_HUB.todo_list;
+9. After confirming that you have valid data in your test table, you can exit the MySQL console:
+   mysql> exit
+
+INSERT INTO STEG_HUB.todo_list (content) VALUES ("My first important item");
+INSERT INTO STEG_HUB.todo_list (content) VALUES ("My second important item");
+INSERT INTO STEG_HUB.todo_list (content) VALUES ("My third important item");
+INSERT INTO STEG_HUB.todo_list (content) VALUES ("and this one more thing");
+
+![35](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/1d7f7866-829a-4401-adf5-e91a79e2f2d5)
+
+
 
 
 
