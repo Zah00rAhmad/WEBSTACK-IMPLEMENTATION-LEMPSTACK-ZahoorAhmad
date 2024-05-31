@@ -125,29 +125,7 @@ To tset the set up with a PHP script, it's best to set up a proper Apache Virtua
    ![22](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/d1f983cf-79b0-463a-9422-328814eecdec)
   
 
-   #/etc/nginx/sites-available/projectLEMP
-server {
-    listen 80;
-    server_name projectLEMP www.projectLEMP;
-    root /var/www/projectLEMP;
-
-    index index.html index.htm index.php;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-     }
-
-    location ~ /\.ht {
-        deny all;
-    }
-
-}
-```
+  
 
 4. You can test your configuration for syntax errors by typing:
 
