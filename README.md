@@ -96,10 +96,92 @@ While Apache embeds the PHP interpreterin each request Nginx requires an externa
 This allow for a better overall performance in most PHP-based websites, but it requires additional configuration.you will need to install php-fpm which stands for PHP fastCGI Program manager and tell Nginx to pass PHP reqests to this software for processing . Additionally you will neeed PHP -mysql,a PHP modeule that allows PHP to communicate with MySQL-based databases.Core PHP Packages will automatically be installed as dependencies.
 
 sudo apt install php-fpm php-mysql
+
 ![20](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/ef751d93-f07a-4952-b314-d926d87f5e08)
 
+Confirm the PHP version
+php -v
+
+![21](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/8edfe249-8e72-4c61-ba77-d644b446345f)
+
+**At this ponit, the LEMP stack is completely installed and fully operational.**
+
+To tset the set up with a PHP script, it's best to set up a proper Apache Virtual Host to hold the website files and folders. Virtual host allows to have multiple websites located on a single machine and it won't be noticed by the website users.
+
+## Step 4 - Create a virtual host for the website using Apache
+
+1. The default directory serving the apache default page is /var/www/html. Create your document directory next to the default one.
+   Created the directory for projectlamp using `mkdir` command
+   sudo mkdir /var/www/projectLEMP
+   
+   Assign the directory ownership with $USER environment variable which references the current system user.
+   sudo chown -R $USER:$USER /var/www/projectLEMP
+   
+3. Create and open a new configuration file in nginx’s “sites-available” directory using nano.
+   sudo nano /etc/nginx/sites-available/projectLEMP
+
+   ![23](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/0c6098da-4c51-4908-815d-41b55618cc53)
+
+   ![22](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/d1f983cf-79b0-463a-9422-328814eecdec)
 
 
+
+   _To `Save` use `ctrl + x` and then press `y` then `enter`_
+
+   # /etc/nginx/sites-available/projectLEMP
+server {
+    listen 80;
+    server_name projectLEMP www.projectLEMP;
+    root /var/www/projectLEMP;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+```
+
+4. You can test your configuration for syntax errors by typing:
+
+sudo nginx -t
+
+5. When you are ready, reload Nginx to apply the changes:
+   sudo systemctl reload nginx
+
+
+![24](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/e29a70c7-6384-4e04-9a40-664e475a55a3)
+![26](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/03da9ddd-cf5a-4544-ab84-b8ba5846eb23)
+
+
+Your new website is now active, but the web root /var/www/projectLEMP is still empty. Create an index.html file in that location so that we can test that your new server block works as expected:
+
+sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
+
+![27](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/18c2cb6a-f28b-4950-a724-dc1ff1c31755)
+
+6. Now go to your browser and access your server’s domain name or IP address, as listed within the server_name directive in your server block configuration file:
+
+http://3.91.243.130
+
+![28](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/e4f97655-1bf0-4d07-9dce-d6e732d62eaa)
+
+
+After checking the relevant information about your PHP server through that page, it’s best to remove the file you created as it contains sensitive information about your PHP environment and your Ubuntu server. You can use rm to remove that file:
+
+sudo rm /var/www/projectLEMP/info.php
+
+![29](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/3f45bed2-8228-46fc-a322-3e436f047875)
 
 
 
