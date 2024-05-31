@@ -54,6 +54,14 @@ http://3.91.243.130:80
 ![13](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/a6af5278-c89f-40c9-92a7-1335f7b6ff80)
 
 
+Another way to retrieve your Public IP address, other than to check it in AWS-Web
+Console, with the help of following command
+
+curl -s http://3.91.243.130/latest/meta-data/public-ipv4
+![14](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/10511538-a84a-4942-84aa-d6976f0ff6a4)
+
+
+
 
    
 
