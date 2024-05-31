@@ -123,12 +123,9 @@ To tset the set up with a PHP script, it's best to set up a proper Apache Virtua
    ![23](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/0c6098da-4c51-4908-815d-41b55618cc53)
 
    ![22](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/d1f983cf-79b0-463a-9422-328814eecdec)
+  
 
-
-
-   _To `Save` use `ctrl + x` and then press `y` then `enter`_
-
-   # /etc/nginx/sites-available/projectLEMP
+   #/etc/nginx/sites-available/projectLEMP
 server {
     listen 80;
     server_name projectLEMP www.projectLEMP;
