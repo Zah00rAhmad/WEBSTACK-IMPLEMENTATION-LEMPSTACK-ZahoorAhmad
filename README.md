@@ -61,6 +61,49 @@ curl -s http://3.91.243.130/latest/meta-data/public-ipv4
 ![14](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/10511538-a84a-4942-84aa-d6976f0ff6a4)
 
 
+## Step 2 - Install MySQL
+1. Install a relational database (RDB)
+    MySQL was installed in this project. It is a popular relational database management system used within PHP environments.
+
+sudo apt install mysql-server
+![15](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/b1b90d95-e21c-4541-a05e-12d42615f6cf)
+
+2. Verify that mysql is running with the commands below.
+   sudo systemctl status mysql
+   &
+   Log in to mysql console
+ 
+ This connects to the MySQL server as the administrative database user root infered by the use of sudo when running the command.
+   sudo mysql
+![16](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/e5d1feb5-d86d-4644-87fe-4f37f37d2f9b)
+
+ 3 Set a password for root user using mysql_native_password as default authentication method.
+  Here, the user's password was defined as "Pakistan@2"
+
+![SQL-NEW-Passwords1](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/391ddc9b-fa72-485c-b71b-2c23c9286fae)
+![SQL-NEW-Password2](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/ac3a66c8-d905-4a7a-bcb5-a161474d8d0d)
+
+![18](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/334eff20-98bc-4802-bb40-b71253e289e5)
+
+![19](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/199dddb2-dd86-4674-b397-12e091c247a6)
+
+   Exit the MySQL shell
+
+## Step 3 - Install PHP
+
+Nginix installed to serve your content and MySQL installed to store and manage your data.Now on instaling PHP it will process code and will genrate dynamics content for the webserver.
+While Apache embeds the PHP interpreterin each request Nginx requires an external program to handle PHP processing and act as a bridge between th PHP interpreter itself and the web server.
+This allow for a better overall performance in most PHP-based websites, but it requires additional configuration.you will need to install php-fpm which stands for PHP fastCGI Program manager and tell Nginx to pass PHP reqests to this software for processing . Additionally you will neeed PHP -mysql,a PHP modeule that allows PHP to communicate with MySQL-based databases.Core PHP Packages will automatically be installed as dependencies.
+
+sudo apt install php-fpm php-mysql
+![20](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/ef751d93-f07a-4952-b314-d926d87f5e08)
+
+
+
+
+
+
+
 
 
    
