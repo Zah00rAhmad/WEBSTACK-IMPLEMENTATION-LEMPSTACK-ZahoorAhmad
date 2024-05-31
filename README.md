@@ -78,7 +78,7 @@ sudo apt install mysql-server
 ![16](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/e5d1feb5-d86d-4644-87fe-4f37f37d2f9b)
 
  3 Set a password for root user using mysql_native_password as default authentication method.
-  Here, the user's password was defined as "Pakistan@2"
+    Here, the user's password was defined as "Pakistan@2"
 
 ![SQL-NEW-Passwords1](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/391ddc9b-fa72-485c-b71b-2c23c9286fae)
 ![SQL-NEW-Password2](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/ac3a66c8-d905-4a7a-bcb5-a161474d8d0d)
