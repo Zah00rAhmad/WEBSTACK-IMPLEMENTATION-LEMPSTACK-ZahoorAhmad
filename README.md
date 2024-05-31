@@ -30,3 +30,30 @@ The LEMP software stack is a group of software that can be used to serve dynamic
 
 ![9](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/fef528e8-c489-409c-987f-b8c58ecc84b8)
 
+2. Run Nginx
+3. sudo apt install nginx
+   
+![10](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/d7dbd60d-04a7-4555-afd8-b88d1128e520)
+
+sudo systemctl enable nginx
+
+![11](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/b148c09e-56cf-4289-8b8d-68a184da831d)
+
+4. The server is running and can be accessed locally in the ubuntu shell by running the command below:
+
+curl http://localhost:80
+OR
+curl http://127.0.0.1:80
+
+![12](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/5540d485-430e-492f-9b6d-923a14b0dbba)
+
+
+5. Test with the public IP address if the Apache HTTP server can respond to request from the internet using the url on a browser.
+   
+http://3.91.243.130:80  
+![13](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/a6af5278-c89f-40c9-92a7-1335f7b6ff80)
+
+
+
+   
+
