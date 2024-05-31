@@ -205,7 +205,26 @@ INSERT INTO STEG_HUB.todo_list (content) VALUES ("and this one more thing");
 
 ![35](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/1d7f7866-829a-4401-adf5-e91a79e2f2d5)
 
+10. Create a new PHP file in your custom web root directory using your preferred editor. We’ll use nano for that:
+    sudo nano /var/www/projectLEMP/todo_list.php
+    The following PHP script connects to the MySQL database and queries for the content of the todo_list table, exhibiting the results in a list. If there’s a 
+    problem with the database connection, it will throw an exception.
+11. Copy this content into your todo_list.php script:
 
+![37](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/0557338b-8dd1-4a88-a4da-ec33288dcd5b)
+
+You can now access this page in your web browser by visiting the domain name or public IP address configured for your website, followed by /todo_list.php:
+http://3.91.243.130/todo_list.php
+
+![36](https://github.com/Zah00rAhmad/WEBSTACK-IMPLEMENTATION-LEMPSTACK-ZahoorAhmad/assets/111878350/439d7ac5-1854-40a8-9d0c-f3a4f9c1604e)
+
+### That means your PHP environment is ready to connect and interact with your MySQL server
+## Conclusion
+We’ve built a flexible foundation for serving PHP websites and applications to your visitors, using Nginx as web server and MySQL as database system.<br><br>
+
+# Thank You
+
+    
 
 
 
